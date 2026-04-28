@@ -1,0 +1,24 @@
+{
+  "name": "buscapet",
+  "version": "3.0.0",
+  "description": "Buscapet.com — React + Vite + Tailwind + React Router",
+  "type": "module",
+  "scripts": {
+    "dev":     "vite",
+    "build":   "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios":            "^1.6.7",
+    "react":            "^18.3.1",
+    "react-dom":        "^18.3.1",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer":         "^10.4.18",
+    "postcss":              "^8.4.35",
+    "tailwindcss":          "^3.4.1",
+    "vite":                 "^5.4.2"
+  }
+}
