@@ -41,7 +41,7 @@ function InputField({ label, type = 'text', value, onChange, placeholder, autoCo
           value={value}
           onChange={e => onChange(e.target.value)}
           placeholder={placeholder}
-          autoComplete={autoComplete}
+          //autoComplete={autoComplete}
           required={required}
           className="input-field"
           style={showToggle ? { paddingRight: '3rem' } : {}}
@@ -234,8 +234,8 @@ export default function Auth() {
                       </div>
                     )}
                   </div>
-                  <InputField label="Telefone" type="tel" value={rPhone} onChange={v => setRPhone(formatPhoneValue(v))} placeholder="(11) 99999-9999" autoComplete="tel" required />
-                  <InputField label="Cidade"   type="text" value={rCity}  onChange={setRCity}  placeholder="São Paulo, SP" required />
+                  <InputField label="Telefone" type="tel" value={rPhone} onChange={v => setRPhone(formatPhoneValue(v))} placeholder="(12) 99999-9999" autoComplete="tel" required />
+                  <InputField label="Cidade"   type="text" value={rCity}  onChange={setRCity}  placeholder="Caraguatatuba, SP" required />
                   <div>
                     <InputField label="Senha" type="password" value={rPass} onChange={setRPass} placeholder="Mínimo 8 caracteres" autoComplete="new-password" required showToggle onToggle={() => setRShowPw(p=>!p)} show={rShowPw} />
                     <StrengthBar password={rPass} />

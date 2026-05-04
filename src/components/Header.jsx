@@ -25,6 +25,7 @@ export default function Header() {
     { to: '/como-funciona', label: 'Como Funciona' },
     { to: '/perdidos',      label: 'Perdidos'       },
     { to: '/achados',       label: 'Achados'        },
+    { to: '/matches',       label: '✨ Matches'     },
   ];
 
   const init = user

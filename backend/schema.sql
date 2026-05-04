@@ -4,9 +4,9 @@
 -- Execute: mysql -u root -p < schema.sql
 -- ════════════════════════════════════════════
 
-CREATE DATABASE IF NOT EXISTS buscapet5
+CREATE DATABASE IF NOT EXISTS buscapet
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE buscapet5;
+USE buscapet;
 
 -- ─────────────────────────────────────────────
 -- TABELA: users

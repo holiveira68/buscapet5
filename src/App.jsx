@@ -14,6 +14,7 @@ import PetForm      from './pages/PetForm'
 import Auth         from './pages/Auth'
 import { MeusPets } from './pages/MeusPets'
 import { Perfil }   from './pages/MeusPets'
+import Matches      from './pages/Matches'
 
 function Layout() {
   const { toasts } = useToast()
@@ -26,6 +27,7 @@ function Layout() {
           <Route path="/como-funciona"    element={<ComoFunciona />} />
           <Route path="/perdidos"         element={<PetList type="lost" />} />
           <Route path="/achados"          element={<PetList type="found" />} />
+          <Route path="/matches"          element={<Matches />} />
           <Route path="/pet/:id"          element={<PetDetail />} />
           <Route path="/auth"             element={<Auth />} />
           <Route path="/perdi-meu-pet"    element={<AuthGuard><PetForm type="lost"  /></AuthGuard>} />

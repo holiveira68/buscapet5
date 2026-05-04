@@ -24,7 +24,7 @@ const FAQS = [
   ['Como entro em contato com quem achou?', 'Cada cadastro exibe nome e telefone. Você contata diretamente por WhatsApp, ligação ou e-mail.'],
   ['O matching é automático?', 'Sim! Ao cadastrar, o sistema já varre todos os do tipo oposto e gera a lista de matches por pontuação.'],
   ['A foto é obrigatória?', 'Não é obrigatória, mas recomendada. Pets com foto têm 3× mais visualizações e chances de match.'],
-  ['Quem é a equipe BuscaPet?', 'Equipe formada por: Helder Oliveira, Larissa Procopio, Laura Bevilaqua e Mayara Batista.'],
+  ['Quem é a Equipe Buscapet?', 'A equipe é formada por Helder Oliveira, Larissa Procopio, Laura Bevilaqua e Mayara Batista.'],
 ];
 
 function ScoreBars() {

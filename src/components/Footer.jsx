@@ -41,12 +41,12 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider" style={{ color: 'rgba(255,255,255,.8)' }}>Contato</h4>
           <p className="text-sm" style={{ color: 'rgba(255,255,255,.5)' }}>contato@buscapet.com</p>
-          <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,.5)' }}>São Paulo, Brasil</p>
+          <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,.5)' }}>Caraguatatuba, Brasil</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pt-6 text-center text-xs border-t" style={{ color: 'rgba(255,255,255,.25)', borderColor: 'rgba(255,255,255,.08)' }}>
-        © 2025 Buscapet.com — Todos os direitos reservados. Feito com 🐾 e muito amor.
+        © 2026 Buscapet.com — Todos os direitos reservados. Feito com 🐾 e muito amor.
       </div>
     </footer>
   );
