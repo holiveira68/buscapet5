@@ -29,17 +29,18 @@ export function PetCard({ pet }) {
             {pet.name || (isLost ? 'Animal Perdido' : 'Animal Achado')}
           </h3>
           <div className="flex flex-col items-end gap-1 flex-shrink-0">
-            <span className={`badge badge-${pet.type}`}>{isLost ? '😢 Perdido' : '🐾 Achado'}</span>
-            {urgent && <span className="badge badge-urgent" style={{ fontSize: '.62rem' }}>🚨 Urgente</span>}
-            {isNew  && <span className="badge badge-new"    style={{ fontSize: '.62rem' }}>✨ Novo</span>}
+            <span className={`badge badge-${pet.type}`}>{isLost ? 'Perdido' : '🐾 Achado'}</span>
+            {urgent && <span className="badge badge-urgent" style={{ fontSize: '.62rem' }}>Urgente</span>}
+            {isNew  && <span className="badge badge-new"    style={{ fontSize: '.62rem' }}>Novo</span>}
           </div>
         </div>
         <p className="text-xs text-charcoal-soft">{[pet.breed, pet.color, pet.size].filter(Boolean).join(' · ')}</p>
-        <p className="text-xs text-charcoal-soft mt-1">📍 {pet.location || '—'}</p>
-        {pet.date && <p className="text-xs mt-0.5" style={{ color: '#aaa' }}>📅 {formatDate(pet.date)}</p>}
+        {/* icone de localização antes do {pet.location}   */}
+        <p className="text-xs text-charcoal-soft mt-1">{pet.location || '—'}</p>
+        {pet.date && <p className="text-xs mt-0.5" style={{ color: '#aaa' }}>{formatDate(pet.date)}</p>}
         {pet.matched && (
           <div className="mt-2 text-xs font-bold rounded-lg px-2 py-1" style={{ color: '#a05c00', background: 'rgba(245,166,35,.12)' }}>
-            ✨ Possível match!
+            Possível match!
           </div>
         )}
       </div>
@@ -56,7 +57,7 @@ export function MatchCard({ match }) {
   const sc  = score >= 75 ? '#22C55E' : score >= 55 ? '#F5A623' : '#F97316';
   const eL  = SPECIES_EMOJI[lost.species]  || '🐾';
   const eF  = SPECIES_EMOJI[found.species] || '🐾';
-  const lbl = score >= 75 ? 'Alta 🔥' : score >= 55 ? 'Média ✨' : 'Baixa';
+  const lbl = score >= 75 ? 'Alta' : score >= 55 ? 'Média' : 'Baixa';
 
   const waPhone = (phone) =>
     `https://wa.me/55${(phone || '').replace(/\D/g, '')}`;
@@ -76,9 +77,10 @@ export function MatchCard({ match }) {
       </div>
       <div className="font-bold text-sm text-charcoal">{pet.name || (type === 'lost' ? 'Animal Perdido' : 'Animal Achado')}</div>
       <div className="text-xs text-charcoal-soft mt-1">{[pet.breed, pet.color].filter(Boolean).join(' · ')}</div>
-      <div className="text-xs text-charcoal-soft">📍 {pet.location || '—'}</div>
+      {/* icone de localização antes do {pet.location}   */}
+      <div className="text-xs text-charcoal-soft">{pet.location || '—'}</div>
       <span className={`badge badge-${type} mt-2`} style={{ fontSize: '.68rem', display: 'inline-flex' }}>
-        {type === 'lost' ? '😢 Perdido' : '🐾 Achado'}
+        {type === 'lost' ? 'Perdido' : 'Achado'}
       </span>
       <div className="text-xs font-semibold text-charcoal mt-2">
         {type === 'lost' ? 'Tutor:' : 'Contato:'} {pet.owner_name}
@@ -89,7 +91,7 @@ export function MatchCard({ match }) {
         rel="noreferrer"
         className="inline-flex items-center gap-1 mt-2 px-3 py-1 rounded-full text-xs font-bold text-white no-underline"
         style={{ background: '#25D366' }}
-      >💬 WhatsApp</a>
+      >WhatsApp</a>
     </div>
   );
 
