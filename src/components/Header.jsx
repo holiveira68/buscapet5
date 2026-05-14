@@ -25,7 +25,7 @@ export default function Header() {
     { to: '/como-funciona', label: 'Como Funciona' },
     { to: '/perdidos',      label: 'Perdidos'       },
     { to: '/achados',       label: 'Achados'        },
-    { to: '/matches',       label: '✨ Matches'     },
+    { to: '/matches',       label: 'Matches'     },
   ];
 
   const init = user
@@ -71,8 +71,8 @@ export default function Header() {
               style={isActive(to) ? { color: 'var(--terra)' } : {}}
             >{label}</Link>
           ))}
-          <Link to="/perdi-meu-pet"    className="btn btn-terra btn-sm">😢 Perdi meu pet</Link>
-          <Link to="/encontrei-um-pet" className="btn btn-outline-sage btn-sm">🐾 Encontrei</Link>
+          <Link to="/perdi-meu-pet"    className="btn btn-terra btn-sm">Perdi meu pet</Link>
+          <Link to="/encontrei-um-pet" className="btn btn-outline-sage btn-sm">Encontrei um pet</Link>
 
           {/* User slot */}
           {!isLogged ? (
@@ -126,8 +126,8 @@ export default function Header() {
           {navLinks.map(({ to, label }) => (
             <Link key={to} to={to} className="block text-sm font-medium py-1.5 text-charcoal-soft hover:text-terra no-underline">{label}</Link>
           ))}
-          <Link to="/perdi-meu-pet"    className="btn btn-terra w-full justify-center mt-1 block text-center">😢 Perdi meu pet</Link>
-          <Link to="/encontrei-um-pet" className="btn btn-outline-sage w-full justify-center block text-center">🐾 Encontrei um pet</Link>
+          <Link to="/perdi-meu-pet"    className="btn btn-terra w-full justify-center mt-1 block text-center">Perdi meu pet</Link>
+          <Link to="/encontrei-um-pet" className="btn btn-outline-sage w-full justify-center block text-center">Encontrei um pet</Link>
           {!isLogged ? (
             <div className="space-y-2 pt-1">
               <Link to="/auth" className="btn btn-terra w-full justify-center block text-center">Entrar</Link>
@@ -142,9 +142,9 @@ export default function Header() {
                   <div className="text-xs text-charcoal-soft">{user?.email}</div>
                 </div>
               </div>
-              <Link to="/meus-pets" className="block text-sm py-1 text-charcoal no-underline">🐾 Meus cadastros</Link>
-              <Link to="/perfil"    className="block text-sm py-1 text-charcoal no-underline">👤 Perfil</Link>
-              <button onClick={handleLogout} className="block text-sm py-1 text-red-500 text-left w-full" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>🚪 Sair</button>
+              <Link to="/meus-pets" className="block text-sm py-1 text-charcoal no-underline">Meus cadastros</Link>
+              <Link to="/perfil"    className="block text-sm py-1 text-charcoal no-underline">Perfil</Link>
+              <button onClick={handleLogout} className="block text-sm py-1 text-red-500 text-left w-full" style={{ background: 'none', border: 'none', cursor: 'pointer' }}>Sair</button>
             </div>
           )}
         </div>

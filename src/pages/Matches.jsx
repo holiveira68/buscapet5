@@ -8,8 +8,8 @@ const PAGE_SIZE_OPTIONS = [6, 12, 24];
 // ── Score badge ────────────────────────────────────────
 function ScoreBadge({ score }) {
   const { bg, color, label } =
-    score >= 75 ? { bg: 'rgba(34,197,94,.12)',  color: '#16A34A', label: 'Alta 🔥'   } :
-    score >= 55 ? { bg: 'rgba(245,166,35,.15)', color: '#a05c00', label: 'Média ✨'  } :
+    score >= 75 ? { bg: 'rgba(34,197,94,.12)',  color: '#16A34A', label: 'Alta'   } :
+    score >= 55 ? { bg: 'rgba(245,166,35,.15)', color: '#a05c00', label: 'Média'  } :
                   { bg: 'rgba(249,115,22,.12)', color: '#C2410C', label: 'Baixa'     };
   return (
     <span className="inline-flex items-center gap-1 rounded-full font-black px-3 py-1 text-xs"
@@ -70,7 +70,7 @@ function MatchRow({ match, onConfirm, onDismiss }) {
           {/* Perdido */}
           <div className="rounded-xl p-4" style={{ background: 'rgba(194,91,42,.05)', border: '1px solid rgba(194,91,42,.15)' }}>
             <div className="flex items-center gap-2 mb-3">
-              <span className="badge badge-lost" style={{ fontSize: '.65rem' }}>😢 Perdido</span>
+              <span className="badge badge-lost" style={{ fontSize: '.65rem' }}>Perdido</span>
             </div>
             <div className="flex items-center gap-3 mb-2">
               {lost.photo
@@ -83,9 +83,10 @@ function MatchRow({ match, onConfirm, onDismiss }) {
               </div>
             </div>
             <div className="text-xs text-charcoal-soft space-y-0.5">
-              <div>📏 {lost.size || '—'}</div>
-              <div>📍 {lost.location || '—'}</div>
-              {lost.date && <div>📅 {formatDate(lost.date)}</div>}
+              <div>{lost.size || '—'}</div>
+              {/* Localização colocar novo icone antes de {lost.location} */}
+              <div>{lost.location || '—'}</div>
+              {lost.date && <div>{formatDate(lost.date)}</div>}
             </div>
             <div className="mt-3 pt-3 border-t" style={{ borderColor: 'rgba(194,91,42,.15)' }}>
               <div className="text-xs font-semibold text-charcoal">{lost.owner_name}</div>
@@ -93,13 +94,13 @@ function MatchRow({ match, onConfirm, onDismiss }) {
                 <a href={`tel:${lost.owner_phone}`}
                   className="flex-1 text-center rounded-lg py-1.5 text-xs font-semibold transition-colors no-underline"
                   style={{ background: 'rgba(194,91,42,.1)', color: 'var(--terra)' }}>
-                  📞 Ligar
+                  Ligar
                 </a>
                 <a href={`https://wa.me/55${(lost.owner_phone||'').replace(/\D/g,'')}`}
                   target="_blank" rel="noreferrer"
                   className="flex-1 text-center rounded-lg py-1.5 text-xs font-semibold text-white no-underline"
                   style={{ background: '#25D366' }}>
-                  💬 WhatsApp
+                  WhatsApp
                 </a>
               </div>
             </div>
@@ -121,9 +122,10 @@ function MatchRow({ match, onConfirm, onDismiss }) {
               </div>
             </div>
             <div className="text-xs text-charcoal-soft space-y-0.5">
-              <div>📏 {found.size || '—'}</div>
-              <div>📍 {found.location || '—'}</div>
-              {found.date && <div>📅 {formatDate(found.date)}</div>}
+              <div>{found.size || '—'}</div>
+              {/* Localização colocar novo icone antes de {found.location} */}
+              <div>{found.location || '—'}</div>
+              {found.date && <div>{formatDate(found.date)}</div>}
             </div>
             <div className="mt-3 pt-3 border-t" style={{ borderColor: 'rgba(74,124,89,.15)' }}>
               <div className="text-xs font-semibold text-charcoal">{found.owner_name}</div>
@@ -131,13 +133,13 @@ function MatchRow({ match, onConfirm, onDismiss }) {
                 <a href={`tel:${found.owner_phone}`}
                   className="flex-1 text-center rounded-lg py-1.5 text-xs font-semibold transition-colors no-underline"
                   style={{ background: 'rgba(74,124,89,.1)', color: 'var(--sage)' }}>
-                  📞 Ligar
+                  Ligar
                 </a>
                 <a href={`https://wa.me/55${(found.owner_phone||'').replace(/\D/g,'')}`}
                   target="_blank" rel="noreferrer"
                   className="flex-1 text-center rounded-lg py-1.5 text-xs font-semibold text-white no-underline"
                   style={{ background: '#25D366' }}>
-                  💬 WhatsApp
+                  WhatsApp
                 </a>
               </div>
             </div>
@@ -388,7 +390,8 @@ export default function Matches() {
         <div className="max-w-7xl mx-auto px-6">
           {activeMatches.length === 0 ? (
             <div className="text-center py-16">
-              <div className="text-6xl mb-4">🔍</div>
+              {/* Estava uma lupa na linha abaixo entre mb-4">🔍</div>" */}
+              <div className="text-6xl mb-4"></div>
               <h3 className="font-display font-black text-2xl mb-2">Nenhum match encontrado</h3>
               <p className="text-charcoal-soft mb-6">
                 {matches.length === 0
@@ -396,8 +399,8 @@ export default function Matches() {
                   : 'Tente reduzir o score mínimo ou mudar os filtros.'}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Link to="/perdi-meu-pet"    className="btn btn-terra btn-sm">😢 Perdi meu pet</Link>
-                <Link to="/encontrei-um-pet" className="btn btn-sage btn-sm">🐾 Encontrei um pet</Link>
+                <Link to="/perdi-meu-pet"    className="btn btn-terra btn-sm">Perdi meu pet</Link>
+                <Link to="/encontrei-um-pet" className="btn btn-sage btn-sm">Encontrei um pet</Link>
               </div>
             </div>
           ) : (
@@ -436,16 +439,18 @@ export default function Matches() {
         <section className="py-10 border-t" style={{ background: 'rgba(34,197,94,.04)', borderColor: 'rgba(34,197,94,.2)' }}>
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="font-display font-black text-xl text-charcoal mb-4">
-              ✅ Reencontros confirmados ({confirmed.length})
+              Reencontros confirmados ({confirmed.length})
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {confirmed.map((m, i) => (
                 <div key={i} className="bg-white rounded-xl border p-4 flex items-center gap-3"
                   style={{ borderColor: 'rgba(34,197,94,.25)' }}>
                   <div className="w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0"
-                    style={{ background: 'rgba(34,197,94,.1)' }}>✅</div>
+                    // Estava um icone de check na linha abaixo antes do </div>
+                    style={{ background: 'rgba(34,197,94,.1)' }}></div>
                   <div className="min-w-0">
                     <div className="font-bold text-sm text-charcoal truncate">
+                      {/* Estava um icone de match na linha abaixo */}
                       {m.lost.name || 'Animal'} × {m.found.owner_name}
                     </div>
                     <div className="text-xs text-charcoal-soft">Score: {m.score}% — Reencontrado!</div>
@@ -463,8 +468,8 @@ export default function Matches() {
           <h2 className="font-display font-black text-charcoal text-2xl mb-2">Não encontrou o seu?</h2>
           <p className="text-charcoal-soft text-sm mb-5">Cadastre o seu pet para que ele apareça nos próximos matches.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link to="/perdi-meu-pet"    className="btn btn-terra">😢 Perdi meu pet</Link>
-            <Link to="/encontrei-um-pet" className="btn btn-sage">🐾 Encontrei um pet</Link>
+            <Link to="/perdi-meu-pet"    className="btn btn-terra">Perdi meu pet</Link>
+            <Link to="/encontrei-um-pet" className="btn btn-sage">Encontrei um pet</Link>
           </div>
         </div>
       </section>

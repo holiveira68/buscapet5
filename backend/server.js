@@ -146,7 +146,7 @@ app.get('/api/auth/my-pets', authMW, async (req, res) => {
   const [pets] = await pool.query(
     `SELECT p.*,
        (SELECT COUNT(*) FROM matches m WHERE (m.lost_pet_id=p.id OR m.found_pet_id=p.id) AND m.status='active') AS match_count
-     FROM pets p WHERE p.user_id=? ORDER BY p.created_at DESC`,
+     FROM pets p WHERE p.user_id=? and p.status != 'resolved' ORDER BY p.created_at DESC`,
     [req.user.id]
   );
   res.json({ pets });

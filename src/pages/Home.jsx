@@ -54,8 +54,8 @@ export default function Home() {
               Cadastre animais perdidos ou achados e deixe nossa tecnologia cruzar as informações para reunir pets e tutores.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
-              <Link to="/perdi-meu-pet"    className="btn btn-terra btn-lg">😢 Perdi meu pet</Link>
-              <Link to="/encontrei-um-pet" className="btn btn-sage btn-lg">🐾 Encontrei um pet</Link>
+              <Link to="/perdi-meu-pet"    className="btn btn-terra btn-lg">Perdi meu pet</Link>
+              <Link to="/encontrei-um-pet" className="btn btn-sage btn-lg">Encontrei um pet</Link>
             </div>
             {/* Stats */}
             <div className="flex items-center gap-8">
@@ -93,8 +93,9 @@ export default function Home() {
                   {c.emoji}
                 </div>
                 <div className="font-bold text-sm text-charcoal">{c.name}</div>
-                <div className="text-xs text-charcoal-soft mt-1">📍 {c.loc}</div>
-                <span className={`badge badge-${c.type} mt-2 inline-flex`}>{c.type === 'lost' ? '😢 Perdido' : '🐾 Achada'}</span>
+                {/* Localização colocar novo icone antes de {c.loc} */}
+                <div className="text-xs text-charcoal-soft mt-1">{c.loc}</div> 
+                <span className={`badge badge-${c.type} mt-2 inline-flex`}>{c.type === 'lost' ? 'Perdido' : 'Achada'}</span>
               </div>
             ))}
             <div className="absolute animate-match z-10" style={{ bottom: '1.5rem', left: '1rem', background: 'var(--amber)', color: 'white', borderRadius: 16, padding: '.65rem 1.1rem', boxShadow: '0 8px 24px rgba(245,166,35,.4)', display: 'flex', alignItems: 'center', gap: '.6rem' }}>
@@ -150,7 +151,7 @@ export default function Home() {
             </div>
           </div>
           <div className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))' }}>
-            {pets.slice(0, 8).map(p => <PetCard key={p.id} pet={p} />)}
+            {pets.slice(0, 10).map(p => <PetCard key={p.id} pet={p} />)}
           </div>
         </div>
       </section>
@@ -161,14 +162,14 @@ export default function Home() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-4"
               style={{ background: 'rgba(245,166,35,.12)', border: '1px solid rgba(245,166,35,.35)', color: '#a05c00' }}>
-              ✨ Possíveis reencontros detectados
+              Possíveis reencontros detectados
             </div>
             <h2 className="section-title">Matches <span style={{ color: 'var(--amber)' }}>automáticos</span></h2>
             <p className="section-sub mt-2 max-w-lg mx-auto">Cruzamento inteligente entre animais perdidos e achados.</p>
           </div>
           <div className="max-w-3xl mx-auto flex flex-col gap-5">
-            {matches.slice(0, 3).length
-              ? matches.slice(0, 3).map((m, i) => <MatchCard key={i} match={m} />)
+            {matches.slice(0, 5).length
+              ? matches.slice(0, 5).map((m, i) => <MatchCard key={i} match={m} />)
               : <p className="text-center text-charcoal-soft py-8">Nenhum match ainda. Cadastre mais pets!</p>}
           </div>
         </div>
@@ -183,8 +184,8 @@ export default function Home() {
             Cada cadastro é uma chance real de reencontro.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/perdi-meu-pet"    className="btn btn-terra btn-lg">😢 Perdi meu pet</Link>
-            <Link to="/encontrei-um-pet" className="btn btn-sage btn-lg">🐾 Encontrei um pet</Link>
+            <Link to="/perdi-meu-pet"    className="btn btn-terra btn-lg">Perdi meu pet</Link>
+            <Link to="/encontrei-um-pet" className="btn btn-sage btn-lg">Encontrei um pet</Link>
           </div>
         </div>
       </section>

@@ -280,7 +280,7 @@ export default function Auth() {
           </div>
 
           <div className="flex justify-center gap-6 pb-5 text-xs text-charcoal-soft">
-            <span>🔒 Dados seguros</span><span>🆓 100% gratuito</span><span>🐾 Feito com amor</span>
+            <span>Dados seguros</span><span>100% gratuito</span><span>Feito com amor</span>
           </div>
         </div>
       </div>
